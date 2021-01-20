@@ -1,0 +1,8 @@
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+*.so
+*.a
+perf_test_dispatch_invoke
+perf_test_send_recv
+Makefile
