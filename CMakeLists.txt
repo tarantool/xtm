@@ -47,6 +47,7 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 enable_testing()
 add_subdirectory(test)
+add_subdirectory(perf)
 
 if(DEFINED XTM_EMBEDDED)
     # Don't build shared library and skip INSTALL() targets if this
