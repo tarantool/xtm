@@ -3,4 +3,5 @@ CMakeCache.txt
 cmake_install.cmake
 *.so
 *.a
+*.perftest
 Makefile
