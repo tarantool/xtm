@@ -57,6 +57,12 @@ int
 xtm_delete(struct xtm_queue *queue);
 
 /**
+ * The same as xtm_create() BUT readfd is already closed.
+ */
+int
+xtm_delete_ex(struct xtm_queue *queue);
+
+/**
  * Function notifies queue consumer about new messages in queue
  * @param[in] queue - xtm_queue to notify
  * @return 0 if success, otherwise return -1 and sets errno value

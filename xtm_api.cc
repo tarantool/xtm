@@ -197,6 +197,16 @@ xtm_delete(struct xtm_queue *queue)
 }
 
 int
+xtm_delete_ex(struct xtm_queue *queue)
+{
+	int rc = 0;
+	if (queue->readfd != queue->writefd && close(queue->writefd) < 0)
+		rc = -1;
+	free(queue);
+	return rc;
+}
+
+int
 xtm_msg_probe(struct xtm_queue *queue)
 {
 	if (xtm_scsp_queue_free_count(&queue->queue) == 0) {
