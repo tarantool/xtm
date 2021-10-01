@@ -30,6 +30,16 @@
  * SUCH DAMAGE.
  */
 
+/* Kludge to support older compilers, probably should tweak
+ * with more precise version numbers, compilers etc.
+ * It is probably better than using macros instead of nullptr
+ * everywhere. */
+#ifdef __GNUC__
+#if __GNUC__ < 6
+# define nullptr NULL
+#endif /* __GNUC__ < 6 */
+#endif /* __GNUC__ */
+
 template <class T>
 struct xtm_scsp_queue_read_iterator;
 
